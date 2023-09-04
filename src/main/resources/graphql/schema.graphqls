@@ -6,6 +6,8 @@ type Mutation {
 type Query {
   categoryById(id: ID): Category
   products: [Product]
+  allCategories: [Category]
+  allProducts: [Product]
 }
 
 input CategoryInput {

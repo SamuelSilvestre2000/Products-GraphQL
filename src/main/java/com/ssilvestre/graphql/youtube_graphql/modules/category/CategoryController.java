@@ -1,5 +1,7 @@
 package com.ssilvestre.graphql.youtube_graphql.modules.category;
 
+//import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -30,5 +32,10 @@ public class CategoryController {
   }
 
   record CategoryInput(String name) {
+  }
+  @Secured("ROLE_USER")
+  @QueryMapping
+  public Iterable<CategoryEntity> allCategories() {
+    return categoryRepository.findAll();
   }
 }

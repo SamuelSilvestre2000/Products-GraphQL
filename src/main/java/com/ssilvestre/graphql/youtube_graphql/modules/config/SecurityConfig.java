@@ -15,7 +15,14 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
-public class SecurityConfig {
+public class SecurityConfig{
+    // @Override
+    // protected void configure(HttpSecurity http) throws Exception {
+    //     http.authorizeRequests()
+    //         .antMatchers("/graphiql", "/graphql/**").permitAll() // Permitir todos os acessos para /graphiql e /graphql
+    //         .anyRequest().authenticated();
+    // }
+    
     
     @Bean
 public InMemoryUserDetailsManager userDetailsManager() {
